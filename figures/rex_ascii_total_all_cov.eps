@@ -1,0 +1,614 @@
+%!PS-Adobe-3.0 EPSF-3.0
+%%DocumentNeededResources: font Helvetica
+%%+ font Helvetica-Bold
+%%+ font Helvetica-Oblique
+%%+ font Helvetica-BoldOblique
+%%+ font Symbol
+%%Title: R Graphics Output
+%%Creator: R Software
+%%Pages: (atend)
+%%BoundingBox: 0 0 504 504
+%%EndComments
+%%BeginProlog
+/bp  { gs sRGB gs } def
+% begin .ps.prolog
+/gs  { gsave } bind def
+/gr  { grestore } bind def
+/ep  { showpage gr gr } bind def
+/m   { moveto } bind def
+/l  { rlineto } bind def
+/np  { newpath } bind def
+/cp  { closepath } bind def
+/f   { fill } bind def
+/o   { stroke } bind def
+/c   { newpath 0 360 arc } bind def
+/r   { 4 2 roll moveto 1 copy 3 -1 roll exch 0 exch rlineto 0 rlineto -1 mul 0 exch rlineto closepath } bind def
+/p1  { stroke } bind def
+/p2  { gsave bg fill grestore newpath } bind def
+/p3  { gsave bg fill grestore stroke } bind def
+/p6  { gsave bg eofill grestore newpath } bind def
+/p7  { gsave bg eofill grestore stroke } bind def
+/t   { 5 -2 roll moveto gsave rotate
+       1 index stringwidth pop
+       mul neg 0 rmoveto show grestore } bind def
+/ta  { 4 -2 roll moveto gsave rotate show } bind def
+/tb  { 2 -1 roll 0 rmoveto show } bind def
+/cl  { grestore gsave newpath 3 index 3 index moveto 1 index
+       4 -1 roll lineto  exch 1 index lineto lineto
+       closepath clip newpath } bind def
+/rgb { setrgbcolor } bind def
+/s   { scalefont setfont } bind def
+% end   .ps.prolog
+/sRGB { [ /CIEBasedABC
+          << /DecodeLMN
+               [ { dup 0.03928 le
+                        {12.92321 div}
+                        {0.055 add 1.055 div 2.4 exp }
+                     ifelse
+                 } bind dup dup
+               ]
+             /MatrixLMN [0.412457 0.212673 0.019334
+                         0.357576 0.715152 0.119192
+                         0.180437 0.072175 0.950301]
+             /WhitePoint [0.9505 1.0 1.0890]
+           >>
+         ] setcolorspace } bind def
+/srgb { setcolor } bind def
+%%IncludeResource: font Helvetica
+/Helvetica findfont
+dup length dict begin
+  {1 index /FID ne {def} {pop pop} ifelse} forall
+  /Encoding ISOLatin1Encoding def
+  currentdict
+  end
+/Font1 exch definefont pop
+%%IncludeResource: font Helvetica-Bold
+/Helvetica-Bold findfont
+dup length dict begin
+  {1 index /FID ne {def} {pop pop} ifelse} forall
+  /Encoding ISOLatin1Encoding def
+  currentdict
+  end
+/Font2 exch definefont pop
+%%IncludeResource: font Helvetica-Oblique
+/Helvetica-Oblique findfont
+dup length dict begin
+  {1 index /FID ne {def} {pop pop} ifelse} forall
+  /Encoding ISOLatin1Encoding def
+  currentdict
+  end
+/Font3 exch definefont pop
+%%IncludeResource: font Helvetica-BoldOblique
+/Helvetica-BoldOblique findfont
+dup length dict begin
+  {1 index /FID ne {def} {pop pop} ifelse} forall
+  /Encoding ISOLatin1Encoding def
+  currentdict
+  end
+/Font4 exch definefont pop
+%%IncludeResource: font Symbol
+/Symbol findfont
+dup length dict begin
+  {1 index /FID ne {def} {pop pop} ifelse} forall
+  currentdict
+  end
+/Font5 exch definefont pop
+%%EndProlog
+%%Page: 1 1
+bp
+59.04 73.44 473.76 444.96 cl
+0 0 0 srgb
+2.25 setlinewidth
+[] 0 setdash
+0 setlinecap
+1 setlinejoin
+10.00 setmiterlimit
+np
+87.20 362.40 m
+102.40 0 l
+o
+0.75 setlinewidth
+[ 2.25 3.75] 0 setdash
+1 setlinecap
+np
+138.40 109.45 m
+0 180.10 l
+o
+np
+138.40 431.20 m
+0 -21.50 l
+o
+0.75 setlinewidth
+[] 0 setdash
+np
+112.80 109.45 m
+51.20 0 l
+o
+np
+112.80 431.20 m
+51.20 0 l
+o
+np
+87.20 289.55 m
+102.40 0 l
+0 120.15 l
+-102.40 0 l
+0 -120.15 l
+o
+138.40 96.50 2.70 c p1
+138.40 107.44 2.70 c p1
+138.40 107.44 2.70 c p1
+138.40 90.30 2.70 c p1
+138.40 107.24 2.70 c p1
+138.40 94.17 2.70 c p1
+138.40 99.71 2.70 c p1
+138.40 98.06 2.70 c p1
+138.40 108.50 2.70 c p1
+138.40 98.69 2.70 c p1
+138.40 102.57 2.70 c p1
+138.40 98.07 2.70 c p1
+138.40 103.13 2.70 c p1
+138.40 102.49 2.70 c p1
+138.40 89.71 2.70 c p1
+138.40 90.33 2.70 c p1
+138.40 90.46 2.70 c p1
+138.40 104.82 2.70 c p1
+138.40 98.51 2.70 c p1
+138.40 92.92 2.70 c p1
+138.40 91.12 2.70 c p1
+138.40 106.86 2.70 c p1
+138.40 105.31 2.70 c p1
+138.40 106.86 2.70 c p1
+138.40 95.10 2.70 c p1
+138.40 91.20 2.70 c p1
+138.40 104.86 2.70 c p1
+138.40 99.99 2.70 c p1
+138.40 106.31 2.70 c p1
+138.40 103.75 2.70 c p1
+138.40 98.76 2.70 c p1
+138.40 100.16 2.70 c p1
+138.40 105.55 2.70 c p1
+138.40 103.94 2.70 c p1
+138.40 102.42 2.70 c p1
+138.40 103.37 2.70 c p1
+138.40 103.90 2.70 c p1
+138.40 105.05 2.70 c p1
+138.40 102.84 2.70 c p1
+138.40 103.80 2.70 c p1
+138.40 104.88 2.70 c p1
+138.40 105.22 2.70 c p1
+138.40 105.05 2.70 c p1
+138.40 101.19 2.70 c p1
+138.40 103.90 2.70 c p1
+138.40 102.84 2.70 c p1
+138.40 102.98 2.70 c p1
+138.40 103.43 2.70 c p1
+138.40 104.56 2.70 c p1
+138.40 105.05 2.70 c p1
+138.40 104.72 2.70 c p1
+138.40 105.39 2.70 c p1
+138.40 102.84 2.70 c p1
+138.40 104.40 2.70 c p1
+138.40 103.51 2.70 c p1
+138.40 103.51 2.70 c p1
+138.40 105.93 2.70 c p1
+138.40 99.53 2.70 c p1
+138.40 105.21 2.70 c p1
+138.40 97.47 2.70 c p1
+138.40 99.61 2.70 c p1
+138.40 99.86 2.70 c p1
+138.40 101.43 2.70 c p1
+138.40 104.66 2.70 c p1
+138.40 104.66 2.70 c p1
+138.40 101.53 2.70 c p1
+138.40 106.89 2.70 c p1
+138.40 102.43 2.70 c p1
+138.40 100.47 2.70 c p1
+138.40 100.47 2.70 c p1
+138.40 102.49 2.70 c p1
+138.40 107.53 2.70 c p1
+138.40 95.30 2.70 c p1
+138.40 95.30 2.70 c p1
+138.40 95.30 2.70 c p1
+138.40 96.98 2.70 c p1
+138.40 102.67 2.70 c p1
+138.40 102.43 2.70 c p1
+138.40 104.97 2.70 c p1
+138.40 104.08 2.70 c p1
+138.40 98.03 2.70 c p1
+138.40 98.24 2.70 c p1
+138.40 99.10 2.70 c p1
+138.40 99.10 2.70 c p1
+138.40 99.10 2.70 c p1
+138.40 97.34 2.70 c p1
+138.40 98.27 2.70 c p1
+138.40 98.27 2.70 c p1
+138.40 98.54 2.70 c p1
+138.40 98.54 2.70 c p1
+138.40 98.54 2.70 c p1
+138.40 98.54 2.70 c p1
+138.40 98.54 2.70 c p1
+138.40 97.60 2.70 c p1
+138.40 97.60 2.70 c p1
+138.40 98.54 2.70 c p1
+138.40 98.54 2.70 c p1
+138.40 98.54 2.70 c p1
+138.40 100.86 2.70 c p1
+138.40 96.42 2.70 c p1
+138.40 96.42 2.70 c p1
+138.40 96.42 2.70 c p1
+138.40 99.14 2.70 c p1
+138.40 105.36 2.70 c p1
+138.40 105.31 2.70 c p1
+138.40 106.82 2.70 c p1
+138.40 98.25 2.70 c p1
+138.40 98.84 2.70 c p1
+138.40 98.69 2.70 c p1
+138.40 104.67 2.70 c p1
+138.40 104.84 2.70 c p1
+138.40 104.06 2.70 c p1
+138.40 101.11 2.70 c p1
+138.40 101.21 2.70 c p1
+138.40 102.96 2.70 c p1
+138.40 97.57 2.70 c p1
+138.40 94.80 2.70 c p1
+138.40 94.93 2.70 c p1
+138.40 94.93 2.70 c p1
+138.40 94.93 2.70 c p1
+138.40 97.42 2.70 c p1
+138.40 97.12 2.70 c p1
+138.40 97.12 2.70 c p1
+138.40 97.12 2.70 c p1
+138.40 102.16 2.70 c p1
+138.40 102.60 2.70 c p1
+138.40 102.84 2.70 c p1
+138.40 101.94 2.70 c p1
+138.40 97.81 2.70 c p1
+138.40 106.25 2.70 c p1
+138.40 95.68 2.70 c p1
+138.40 96.60 2.70 c p1
+138.40 97.10 2.70 c p1
+138.40 103.58 2.70 c p1
+138.40 98.75 2.70 c p1
+138.40 104.40 2.70 c p1
+138.40 99.06 2.70 c p1
+138.40 101.06 2.70 c p1
+138.40 104.99 2.70 c p1
+138.40 106.53 2.70 c p1
+138.40 96.80 2.70 c p1
+138.40 99.22 2.70 c p1
+138.40 97.71 2.70 c p1
+138.40 94.95 2.70 c p1
+138.40 99.34 2.70 c p1
+138.40 99.34 2.70 c p1
+138.40 101.84 2.70 c p1
+138.40 101.15 2.70 c p1
+138.40 103.78 2.70 c p1
+138.40 89.61 2.70 c p1
+138.40 95.87 2.70 c p1
+138.40 97.95 2.70 c p1
+138.40 94.04 2.70 c p1
+138.40 108.26 2.70 c p1
+138.40 87.90 2.70 c p1
+138.40 96.17 2.70 c p1
+138.40 98.32 2.70 c p1
+138.40 103.08 2.70 c p1
+138.40 103.08 2.70 c p1
+138.40 103.58 2.70 c p1
+138.40 104.69 2.70 c p1
+138.40 105.31 2.70 c p1
+138.40 105.31 2.70 c p1
+138.40 107.60 2.70 c p1
+138.40 96.33 2.70 c p1
+138.40 103.78 2.70 c p1
+138.40 106.86 2.70 c p1
+138.40 103.39 2.70 c p1
+138.40 108.37 2.70 c p1
+138.40 103.39 2.70 c p1
+138.40 101.68 2.70 c p1
+138.40 107.74 2.70 c p1
+138.40 103.78 2.70 c p1
+138.40 103.78 2.70 c p1
+138.40 103.78 2.70 c p1
+138.40 106.58 2.70 c p1
+138.40 103.78 2.70 c p1
+138.40 103.78 2.70 c p1
+138.40 103.78 2.70 c p1
+138.40 97.39 2.70 c p1
+138.40 105.07 2.70 c p1
+138.40 92.91 2.70 c p1
+138.40 93.48 2.70 c p1
+138.40 96.76 2.70 c p1
+138.40 93.48 2.70 c p1
+138.40 94.64 2.70 c p1
+138.40 104.84 2.70 c p1
+138.40 94.68 2.70 c p1
+138.40 103.98 2.70 c p1
+138.40 104.84 2.70 c p1
+138.40 104.40 2.70 c p1
+138.40 105.31 2.70 c p1
+138.40 105.63 2.70 c p1
+138.40 106.67 2.70 c p1
+138.40 106.67 2.70 c p1
+138.40 100.48 2.70 c p1
+138.40 97.62 2.70 c p1
+138.40 107.44 2.70 c p1
+138.40 102.84 2.70 c p1
+138.40 103.58 2.70 c p1
+138.40 105.96 2.70 c p1
+138.40 105.96 2.70 c p1
+138.40 104.84 2.70 c p1
+138.40 106.86 2.70 c p1
+138.40 104.84 2.70 c p1
+138.40 105.31 2.70 c p1
+138.40 103.58 2.70 c p1
+138.40 103.20 2.70 c p1
+138.40 103.58 2.70 c p1
+138.40 103.58 2.70 c p1
+138.40 100.96 2.70 c p1
+138.40 92.66 2.70 c p1
+138.40 102.49 2.70 c p1
+138.40 102.84 2.70 c p1
+138.40 103.58 2.70 c p1
+138.40 99.49 2.70 c p1
+138.40 105.31 2.70 c p1
+138.40 108.70 2.70 c p1
+138.40 108.05 2.70 c p1
+138.40 108.05 2.70 c p1
+138.40 103.20 2.70 c p1
+138.40 103.98 2.70 c p1
+138.40 106.86 2.70 c p1
+138.40 103.20 2.70 c p1
+138.40 101.84 2.70 c p1
+138.40 96.84 2.70 c p1
+138.40 108.70 2.70 c p1
+138.40 100.31 2.70 c p1
+138.40 106.86 2.70 c p1
+138.40 108.70 2.70 c p1
+2.25 setlinewidth
+[] 0 setdash
+0 setlinecap
+np
+215.20 230.91 m
+102.40 0 l
+o
+0.75 setlinewidth
+[ 2.25 3.75] 0 setdash
+1 setlinecap
+np
+266.40 87.48 m
+0 68.26 l
+o
+np
+266.40 414.00 m
+0 -154.80 l
+o
+0.75 setlinewidth
+[] 0 setdash
+np
+240.80 87.48 m
+51.20 0 l
+o
+np
+240.80 414.00 m
+51.20 0 l
+o
+np
+215.20 155.74 m
+102.40 0 l
+0 103.46 l
+-102.40 0 l
+0 -103.46 l
+o
+266.40 431.20 2.70 c p1
+266.40 415.56 2.70 c p1
+266.40 431.20 2.70 c p1
+266.40 431.20 2.70 c p1
+266.40 431.20 2.70 c p1
+266.40 431.20 2.70 c p1
+266.40 431.20 2.70 c p1
+266.40 431.20 2.70 c p1
+266.40 431.20 2.70 c p1
+266.40 431.20 2.70 c p1
+266.40 431.20 2.70 c p1
+266.40 431.20 2.70 c p1
+266.40 431.20 2.70 c p1
+266.40 431.20 2.70 c p1
+266.40 431.20 2.70 c p1
+266.40 431.20 2.70 c p1
+266.40 431.20 2.70 c p1
+266.40 431.20 2.70 c p1
+266.40 431.20 2.70 c p1
+266.40 431.20 2.70 c p1
+266.40 414.82 2.70 c p1
+266.40 431.20 2.70 c p1
+266.40 431.20 2.70 c p1
+2.25 setlinewidth
+[] 0 setdash
+0 setlinecap
+np
+343.20 201.28 m
+102.40 0 l
+o
+0.75 setlinewidth
+[ 2.25 3.75] 0 setdash
+1 setlinecap
+np
+394.40 87.20 m
+0 9.94 l
+o
+np
+394.40 431.20 m
+0 -172.00 l
+o
+0.75 setlinewidth
+[] 0 setdash
+np
+368.80 87.20 m
+51.20 0 l
+o
+np
+368.80 431.20 m
+51.20 0 l
+o
+np
+343.20 97.14 m
+102.40 0 l
+0 162.06 l
+-102.40 0 l
+0 -162.06 l
+o
+0.00 0.00 504.00 504.00 cl
+0 0 0 srgb
+0.75 setlinewidth
+[] 0 setdash
+1 setlinecap
+1 setlinejoin
+10.00 setmiterlimit
+np
+138.40 73.44 m
+256.00 0 l
+o
+np
+138.40 73.44 m
+0 -7.20 l
+o
+np
+266.40 73.44 m
+0 -7.20 l
+o
+np
+394.40 73.44 m
+0 -7.20 l
+o
+/Font1 findfont 12 s
+138.40 47.52 (Node) .5 0 t
+266.40 47.52 (Edge) .5 0 t
+394.40 47.52 (Edge-pair) .5 0 t
+np
+59.04 87.20 m
+0 344.00 l
+o
+np
+59.04 87.20 m
+-7.20 0 l
+o
+np
+59.04 156.00 m
+-7.20 0 l
+o
+np
+59.04 224.80 m
+-7.20 0 l
+o
+np
+59.04 293.60 m
+-7.20 0 l
+o
+np
+59.04 362.40 m
+-7.20 0 l
+o
+np
+59.04 431.20 m
+-7.20 0 l
+o
+41.76 87.20 (0) .5 90 t
+41.76 156.00 (20) .5 90 t
+41.76 224.80 (40) .5 90 t
+41.76 293.60 (60) .5 90 t
+41.76 362.40 (80) .5 90 t
+41.76 431.20 (100) .5 90 t
+0.00 0.00 504.00 504.00 cl
+/Font2 findfont 14 s
+0 0 0 srgb
+173.04 469.45 (Co) 0 ta
+-0.280 (vera) tb
+-0.140 (g) tb
+0.140 (es f) tb
+-0.280 (or all Matc) tb
+-0.140 (hings) tb gr
+/Font1 findfont 12 s
+266.40 18.72 (total) .5 0 t
+12.96 223.86 (Co) 90 ta
+-0.180 (v) tb
+-0.300 (er) tb
+-0.120 (age\(%\)) tb gr
+0.00 0.00 504.00 504.00 cl
+0 0 0 srgb
+0.75 setlinewidth
+[] 0 setdash
+1 setlinecap
+1 setlinejoin
+10.00 setmiterlimit
+np
+59.04 73.44 m
+414.72 0 l
+0 371.52 l
+-414.72 0 l
+0 -371.52 l
+o
+np
+59.04 87.20 m
+0 344.00 l
+o
+np
+59.04 87.20 m
+-7.20 0 l
+o
+np
+59.04 121.60 m
+-7.20 0 l
+o
+np
+59.04 156.00 m
+-7.20 0 l
+o
+np
+59.04 190.40 m
+-7.20 0 l
+o
+np
+59.04 224.80 m
+-7.20 0 l
+o
+np
+59.04 259.20 m
+-7.20 0 l
+o
+np
+59.04 293.60 m
+-7.20 0 l
+o
+np
+59.04 328.00 m
+-7.20 0 l
+o
+np
+59.04 362.40 m
+-7.20 0 l
+o
+np
+59.04 396.80 m
+-7.20 0 l
+o
+np
+59.04 431.20 m
+-7.20 0 l
+o
+/Font1 findfont 12 s
+41.76 87.20 (0) .5 90 t
+41.76 121.60 (10) .5 90 t
+41.76 156.00 (20) .5 90 t
+41.76 190.40 (30) .5 90 t
+41.76 224.80 (40) .5 90 t
+41.76 259.20 (50) .5 90 t
+41.76 293.60 (60) .5 90 t
+41.76 328.00 (70) .5 90 t
+41.76 362.40 (80) .5 90 t
+41.76 396.80 (90) .5 90 t
+41.76 431.20 (100) .5 90 t
+ep
+%%Trailer
+%%Pages: 1
+%%EOF

@@ -1,0 +1,15 @@
+\section{Conclusion}
+\label{sec:conclusion}
+To our knowledge, this is the first research to  evaluate fine-grained  coverage metrics for regular expressions. 
+We explore coverage over the DFA representation of a regular expression. 
+It is also the first research to explore how often regular expressions are tested in a large set of the software projects. 
+%We have presented our definitions of test coverage metrics for regular expressions. 
+We show the coverage metrics of regular expressions from 1,225 GitHub Java Maven projects and found that over 80\% of {\em FullMatch} functions are not tested and that most of the tested regular expressions have a low edge and edge-pair coverage. 
+We also show that with the help of the regular expression tool Rex it is possible to improve the regular expression testing coverage by adding input strings, but that there is an upper bound for this type of improvement. 
+This work is a first step toward better understanding how regular expressions are tested in practice; future work will explore how various coverage metrics can reduce the bugs associated with regular expressions. % relate to bug reports 
+
+
+
+%Therefore it is necessary to add failed regular expression matchings to achieve higher coverage. 
+%\todo{Here add the conclusion of our regular expression research}
+%Overall, we can draw a conclusion that regular expression testing should focus more on edge and edge pair coverages and to increase coverage metrics we should add more failed matching tests. \todo{how? we don't show that testing is good. We just characterize the test coverage. How can we make a recommendation like this based on the information provided?}

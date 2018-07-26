@@ -1,0 +1,244 @@
+\documentclass[sigconf,screen]{acmart}
+\newcommand{\todo}[1]{\textbf{\textcolor{red}{TODO.NOW: #1}}} %comment out for submission
+\newcommand{\todoNow}[1]{\textbf{\textcolor{red}{TODO.NOW: #1}}} %comment out for submission
+\newcommand{\todoMid}[1]{\textbf{\textcolor{magenta}{}}} %comment out for submission
+\newcommand{\todoLast}[1]{\textbf{\textcolor{blue}{TODO.LAST: #1}}} %comment out for submission
+\newcommand{\clarify}[1]{{\color{blue}\{CLARIFY: #1\}}}
+\newcommand{\adh}[1]{\textbf{\textcolor{blue}{QUESTION: #1}}} %comment out for submission
+
+% Copyright
+%%% The following is specific to ESEC/FSE '18 and the paper
+%%% 'How Well Are Regular Expressions Tested in the Wild?'
+%%% by Peipei Wang and Kathryn T. Stolee.
+%%%
+\setcopyright{acmcopyright}
+\acmPrice{15.00}
+\acmDOI{10.1145/3236024.3236072}
+\acmYear{2018}
+\copyrightyear{2018}
+\acmISBN{978-1-4503-5573-5/18/11}
+\acmConference[ESEC/FSE '18]{Proceedings of the 26th ACM Joint European Software Engineering Conference and Symposium on the Foundations of Software Engineering}{November 4--9, 2018}{Lake Buena Vista, FL, USA}
+\acmBooktitle{Proceedings of the 26th ACM Joint European Software Engineering Conference and Symposium on the Foundations of Software Engineering (ESEC/FSE '18), November 4--9, 2018, Lake Buena Vista, FL, USA}
+
+
+
+\usepackage{booktabs} % For formal tables
+\usepackage{amssymb}
+\usepackage{datetime}
+\usepackage{fancyvrb}
+\usepackage{graphicx}
+\usepackage{mdwlist}
+\usepackage{multirow}
+\usepackage{rotating}
+\usepackage{subcaption}
+%\usepackage{subfigure}
+\usepackage{xcolor}
+%\usepackage{amssymb}
+%\usepackage{amsmath}
+\usepackage{algorithm}
+\usepackage{algorithmic}
+\usepackage{syntax}
+\usepackage{microtype}
+%\usepackage[backend=biber]{biblatex}
+\usepackage{url}
+\def\UrlBreaks{\do\/\do-}
+\usepackage{morefloats}
+\usepackage{listings}
+\usepackage{balance}
+% \usepackage{cite}
+\usepackage{hyperref}
+\usepackage{xspace}
+\usepackage{mdframed}
+\usepackage{enumitem}
+\usepackage{ctable} % for \specialrule command
+
+\usepackage{perpage} %the perpage package
+\MakePerPage[1]{footnote} %the perpage package command}
+%\usepackage[perpage]{footmisc}
+
+
+%\newcommand{\RepoOneT}{{\em Repo1T}\xspace}
+%\newcommand{\RepoOneS}{{\em Repo1S}\xspace}
+%\newcommand{\RepoTwoT}{{\em Repo2T}\xspace}
+%\newcommand{\RepoTwoS}{{\em Repo2S}\xspace}
+%\newcommand{\RexSOne}{{\em RexS1}\xspace}
+%\newcommand{\RexSFive}{{\em RexS5}\xspace}
+%\newcommand{\RexSTen}{{\em RexS10}\xspace}
+
+\usepackage{fixltx2e}
+\newcommand{\RepoOneT}{{\em Repo\textsubscript{A}S}\xspace}
+\newcommand{\RepoOneS}{{\em Repo\textsubscript{A}M}\xspace}
+\newcommand{\RepoTwoT}{{\em Repo\textsubscript{B}S}\xspace}
+\newcommand{\RepoTwoS}{{\em Repo\textsubscript{B}M}\xspace}
+\newcommand{\RexSOne}{{\em Rex1M}\xspace}
+\newcommand{\RexSFive}{{\em Rex5M}\xspace}
+\newcommand{\RexSTen}{{\em Rex10M}\xspace}
+
+\lstdefinestyle{customc}{
+  belowcaptionskip=1\baselineskip,
+  breaklines=true,
+  frame=L,
+  xleftmargin=\parindent,
+  language=Java,
+  showstringspaces=false,
+  basicstyle=\footnotesize\ttfamily,
+  keywordstyle=\bfseries\color{green!40!black},
+  commentstyle=\itshape\color{purple!40!black},
+  identifierstyle=\color{blue},
+  stringstyle=\color{orange},
+}
+
+\lstdefinestyle{customasm}{
+  belowcaptionskip=1\baselineskip,
+  frame=L,
+  xleftmargin=\parindent,
+  language=[x86masm]Assembler,
+  basicstyle=\footnotesize\ttfamily,
+  commentstyle=\itshape\color{purple!40!black},
+}
+
+%\lstset{escapechar=@,style=customc}
+\lstset{language=Java} 
+\definecolor{dkgreen}{rgb}{0,0.5,0}
+\definecolor{dkred}{rgb}{0.5,0,0}
+\definecolor{gray}{rgb}{0.5,0.5,0.5}
+\lstset{basicstyle=\ttfamily\footnotesize,
+  morekeywords={virtualinvoke}, 
+  keywordstyle=\color{blue},
+  ndkeywordstyle=\color{red},
+  commentstyle=\color{dkred},
+  stringstyle=\color{dkgreen},
+  numbers=left,
+  numberstyle=\ttfamily\footnotesize\color{gray},
+  stepnumber=1,
+  numbersep=10pt,
+  backgroundcolor=\color{white},
+  tabsize=4,
+  showspaces=false,
+  showstringspaces=false,
+  xleftmargin=.23in
+}
+\newcommand\lt[1]{{\lstinline+#1+}} 
+
+\begin{document}
+%\title{How well regular expressions are tested and what we can do about it?}
+\title[Testing Regular Expressions]{How well are regular expressions tested in the wild?}
+%\titlenote{Produces the permission block, and
+%  copyright information}
+%\subtitle{Extended Abstract}
+%\subtitlenote{The full version of the author's guide is available as
+%  \texttt{acmart.pdf} document}
+
+
+%\author{(blinded for review)}
+\iftrue
+\author{Peipei Wang}
+%\authornote{Dr.~Trovato insisted his name be first.}
+%\orcid{1234-5678-9012}
+\affiliation{%
+  \institution{Department of Computer Science\\
+North Carolina State University}
+%  \streetaddress{P.O. Box 1212}
+%  \city{Dublin}
+%  \state{Ohio}
+%  \postcode{43017-6221}
+}
+\email{pwang7@ncsu.edu}
+
+\author{Kathryn T. Stolee}
+\affiliation{%
+  \institution{Department of Computer Science\\
+North Carolina State University}
+%  \streetaddress{P.O. Box 1212}
+%  \city{Dublin}
+%  \state{Ohio}
+%  \postcode{43017-6221}
+}
+\email{ktstolee@ncsu.edu}
+
+%\author{Julius P.~Kumquat}
+%\affiliation{\institution{The Kumquat Consortium}}
+%\email{jpkumquat@consortium.net}
+\fi
+
+% The default list of authors is too long for headers}
+%\renewcommand{\shortauthors}{B. Trovato et al.}
+
+
+\begin{abstract}
+%Regular expressions are used for querying databases, grepping file content, document searches, validating user input, and parsing files. 
+%Most programming languages have standard libraries or built-in support for regular expression processing. 
+%Despite their frequent appearance in source code, regular expressions are responsible for numerous faults in many software products, cause software performance issues, and often are hard to understand and maintain. Further, d
+Developers report testing their regular expressions less than the rest of their code. In this work, we explore how thoroughly tested regular expressions are by examining open source projects. 
+
+
+Using standard metrics of coverage, such as line and branch coverage, gives an incomplete picture of the test coverage of regular expressions. 
+We adopt graph-based coverage metrics for the DFA representation of regular expressions, providing fine-grained test coverage metrics. 
+%These metrics allow us to identify how much of a regular expression's structure is covered by existing tests. 
+Using over 15,000 tested regular expressions in 1,225 Java projects on GitHub, we measure node, edge, and edge-pair coverage. 
+Our results show that only 17\% of the regular expressions in the repositories are tested at all. For those that are tested,  the median number of test inputs is two. For nearly 42\%  of the tested regular expressions, only one test input is used. Average node and edge coverage levels on the DFAs for tested regular expressions are 59\% and 29\%, respectively. 
+Due to the lack of testing of regular expressions, we explore whether a string generation tool for regular expressions, Rex, achieves high coverage levels. 
+%Next, we compare the coverage achieved in the test suites to coverage that could be achieved using Rex, an off-the-shelf . 
+With some exceptions, we found that tools such as Rex can be used to write test inputs with similar coverage to the developer tests. 
+%We found that for the same number of test inputs,  Rex achieves lower coverage than the existing tests because Rex does not generate non-matching input strings. 
+%This indicates that tools such as Rex can be used to write test inputs with similar coverage to the developer tests
+\end{abstract}
+
+%
+% The code below should be generated by the tool at
+% http://dl.acm.org/ccs.cfm
+% Please copy and paste the code instead of the example below.
+%
+
+\begin{CCSXML}
+<ccs2012>
+<concept>
+<concept_id>10011007.10011074.10011099.10011102.10011103</concept_id>
+<concept_desc>Software and its engineering~Software testing and debugging</concept_desc>
+<concept_significance>500</concept_significance>
+</concept>
+<concept>
+<concept_id>10011007.10011006.10011008.10011024</concept_id>
+<concept_desc>Software and its engineering~Language features</concept_desc>
+<concept_significance>300</concept_significance>
+</concept>
+</ccs2012>
+\end{CCSXML}
+
+\ccsdesc[500]{Software and its engineering~Software testing and debugging}
+\ccsdesc[300]{Software and its engineering~Language features}
+
+
+\keywords{Regular expressions, Test coverage metrics, Deterministic Finite Automaton}
+
+\settopmatter{printfolios=true}
+\maketitle
+
+\input{intro}
+\input{rq}
+%\input{coverage}
+%\input{method}
+%\input{rq1}
+\input{rq2}
+\input{rq3}
+%\input{results}
+\input{discussion}
+\input{related}
+\input{conclusion}
+
+%\iffalse
+\begin{acks}
+%The authors would like to thank Andrew Hill for his feedback. 
+This work is supported in part by NSF-SHF \#1714699 and \#1645136. 
+\end{acks}
+%\fi
+
+\balance
+
+\bibliographystyle{acm}
+%\bibliography{peipei}
+\bibliography{peipei,stolee}
+%\bibliography{stolee}
+
+
+\end{document}

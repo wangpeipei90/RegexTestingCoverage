@@ -1,0 +1,623 @@
+%%% ====================================================================
+%%%  BibTeX-file{
+%%%     author          = "Gerry Murray",
+%%%     version         = "1.2",
+%%%     date            = "2 April 2012",
+%%%     filename        = "acmsmall-sample-bibfile.bib",
+%%%     address         = "ACM, NY",
+%%%     email           = "murray at hq.acm.org",
+%%%     codetable       = "ISO/ASCII",
+%%%     keywords        = "ACM Reference Format, bibliography, citation, references",
+%%%     supported       = "yes",
+%%%     docstring       = "This BibTeX database file contains 'bibdata' entries
+%%%                        that 'match' the examples provided in the Specifications Document
+%%%                        AND, also, 'legacy'-type bibs. It should assist authors in
+%%%                        choosing the 'correct' at-bibtype and necessary bib-fields
+%%%                        so as to obtain the appropriate ACM Reference Format output.
+%%%			   It also contains many 'Standard Abbreviations'. "
+%%%  }
+%%% ====================================================================
+
+% Journals
+
+% First the Full Name is given, then the abbreviation used in the AMS Math
+% Reviews, with an indication if it could not be found there.
+% Note the 2nd overwrites the 1st, so swap them if you want the full name.
+
+ %{AMS}
+ @String{AMSTrans = "American Mathematical Society Translations" }
+ @String{AMSTrans = "Amer. Math. Soc. Transl." }
+ @String{BullAMS = "Bulletin of the American Mathematical Society" }
+ @String{BullAMS = "Bull. Amer. Math. Soc." }
+ @String{ProcAMS = "Proceedings of the American Mathematical Society" }
+ @String{ProcAMS = "Proc. Amer. Math. Soc." }
+ @String{TransAMS = "Transactions of the American Mathematical Society" }
+ @String{TransAMS = "Trans. Amer. Math. Soc." }
+
+ %ACM
+ @String{CACM = "Communications of the {ACM}" }
+ @String{CACM = "Commun. {ACM}" }
+ @String{CompServ = "Comput. Surveys" }
+ @String{JACM = "J. ACM" }
+ @String{ACMMathSoft = "{ACM} Transactions on Mathematical Software" }
+ @String{ACMMathSoft = "{ACM} Trans. Math. Software" }
+ @String{SIGNUM = "{ACM} {SIGNUM} Newsletter" }
+ @String{SIGNUM = "{ACM} {SIGNUM} Newslett." }
+
+ @String{AmerSocio = "American Journal of Sociology" }
+ @String{AmerStatAssoc = "Journal of the American Statistical Association" }
+ @String{AmerStatAssoc = "J. Amer. Statist. Assoc." }
+ @String{ApplMathComp = "Applied Mathematics and Computation" }
+ @String{ApplMathComp = "Appl. Math. Comput." }
+ @String{AmerMathMonthly = "American Mathematical Monthly" }
+ @String{AmerMathMonthly = "Amer. Math. Monthly" }
+ @String{BIT = "{BIT}" }
+ @String{BritStatPsych = "British Journal of Mathematical and Statistical
+          Psychology" }
+ @String{BritStatPsych = "Brit. J. Math. Statist. Psych." }
+ @String{CanMathBull = "Canadian Mathematical Bulletin" }
+ @String{CanMathBull = "Canad. Math. Bull." }
+ @String{CompApplMath = "Journal of Computational and Applied Mathematics" }
+ @String{CompApplMath = "J. Comput. Appl. Math." }
+ @String{CompPhys = "Journal of Computational Physics" }
+ @String{CompPhys = "J. Comput. Phys." }
+ @String{CompStruct = "Computers and Structures" }
+ @String{CompStruct = "Comput. \& Structures" }
+ @String{CompJour = "The Computer Journal" }
+ @String{CompJour = "Comput. J." }
+ @String{CompSysSci = "Journal of Computer and System Sciences" }
+ @String{CompSysSci = "J. Comput. System Sci." }
+ @String{Computing = "Computing" }
+ @String{ContempMath = "Contemporary Mathematics" }
+ @String{ContempMath = "Contemp. Math." }
+ @String{Crelle = "Crelle's Journal" }
+ @String{GiornaleMath = "Giornale di Mathematiche" }
+ @String{GiornaleMath = "Giorn. Mat." } % didn't find in AMS MR., ibid.
+
+ %IEEE
+ @String{Computer = "{IEEE} Computer" }
+ @String{IEEETransComp = "{IEEE} Transactions on Computers" }
+ @String{IEEETransComp = "{IEEE} Trans. Comput." }
+ @String{IEEETransAC = "{IEEE} Transactions on Automatic Control" }
+ @String{IEEETransAC = "{IEEE} Trans. Automat. Control" }
+ @String{IEEESpec = "{IEEE} Spectrum" } % didn't find in AMS MR
+ @String{ProcIEEE = "Proceedings of the {IEEE}" }
+ @String{ProcIEEE = "Proc. {IEEE}" } % didn't find in AMS MR
+ @String{IEEETransAeroElec = "{IEEE} Transactions on Aerospace and Electronic
+     Systems" }
+ @String{IEEETransAeroElec = "{IEEE} Trans. Aerospace Electron. Systems" }
+
+ @String{IMANumerAna = "{IMA} Journal of Numerical Analysis" }
+ @String{IMANumerAna = "{IMA} J. Numer. Anal." }
+ @String{InfProcLet = "Information Processing Letters" }
+ @String{InfProcLet = "Inform. Process. Lett." }
+ @String{InstMathApp = "Journal of the Institute of Mathematics and
+     its Applications" }
+ @String{InstMathApp = "J. Inst. Math. Appl." }
+ @String{IntControl = "International Journal of Control" }
+ @String{IntControl = "Internat. J. Control" }
+ @String{IntNumerEng = "International Journal for Numerical Methods in
+     Engineering" }
+ @String{IntNumerEng = "Internat. J. Numer. Methods Engrg." }
+ @String{IntSuper = "International Journal of Supercomputing Applications" }
+ @String{IntSuper = "Internat. J. Supercomputing Applic." } % didn't find
+%% in AMS MR
+ @String{Kibernetika = "Kibernetika" }
+ @String{JResNatBurStand = "Journal of Research of the National Bureau
+     of Standards" }
+ @String{JResNatBurStand = "J. Res. Nat. Bur. Standards" }
+ @String{LinAlgApp = "Linear Algebra and its Applications" }
+ @String{LinAlgApp = "Linear Algebra Appl." }
+ @String{MathAnaAppl = "Journal of Mathematical Analysis and Applications" }
+ @String{MathAnaAppl = "J. Math. Anal. Appl." }
+ @String{MathAnnalen = "Mathematische Annalen" }
+ @String{MathAnnalen = "Math. Ann." }
+ @String{MathPhys = "Journal of Mathematical Physics" }
+ @String{MathPhys = "J. Math. Phys." }
+ @String{MathComp = "Mathematics of Computation" }
+ @String{MathComp = "Math. Comp." }
+ @String{MathScand = "Mathematica Scandinavica" }
+ @String{MathScand = "Math. Scand." }
+ @String{TablesAidsComp = "Mathematical Tables and Other Aids to Computation" }
+ @String{TablesAidsComp = "Math. Tables Aids Comput." }
+ @String{NumerMath = "Numerische Mathematik" }
+ @String{NumerMath = "Numer. Math." }
+ @String{PacificMath = "Pacific Journal of Mathematics" }
+ @String{PacificMath = "Pacific J. Math." }
+ @String{ParDistComp = "Journal of Parallel and Distributed Computing" }
+ @String{ParDistComp = "J. Parallel and Distrib. Comput." } % didn't find
+%% in AMS MR
+ @String{ParComputing = "Parallel Computing" }
+ @String{ParComputing = "Parallel Comput." }
+ @String{PhilMag = "Philosophical Magazine" }
+ @String{PhilMag = "Philos. Mag." }
+ @String{ProcNAS = "Proceedings of the National Academy of Sciences
+                    of the USA" }
+ @String{ProcNAS = "Proc. Nat. Acad. Sci. U. S. A." }
+ @String{Psychometrika = "Psychometrika" }
+ @String{QuartMath = "Quarterly Journal of Mathematics, Oxford, Series (2)" }
+ @String{QuartMath = "Quart. J. Math. Oxford Ser. (2)" }
+ @String{QuartApplMath = "Quarterly of Applied Mathematics" }
+ @String{QuartApplMath = "Quart. Appl. Math." }
+ @String{RevueInstStat = "Review of the International Statisical Institute" }
+ @String{RevueInstStat = "Rev. Inst. Internat. Statist." }
+
+ %SIAM
+ @String{JSIAM = "Journal of the Society for Industrial and Applied
+     Mathematics" }
+ @String{JSIAM = "J. Soc. Indust. Appl. Math." }
+ @String{JSIAMB = "Journal of the Society for Industrial and Applied
+     Mathematics, Series B, Numerical Analysis" }
+ @String{JSIAMB = "J. Soc. Indust. Appl. Math. Ser. B Numer. Anal." }
+ @String{SIAMAlgMeth = "{SIAM} Journal on Algebraic and Discrete Methods" }
+ @String{SIAMAlgMeth = "{SIAM} J. Algebraic Discrete Methods" }
+ @String{SIAMAppMath = "{SIAM} Journal on Applied Mathematics" }
+ @String{SIAMAppMath = "{SIAM} J. Appl. Math." }
+ @String{SIAMComp = "{SIAM} Journal on Computing" }
+ @String{SIAMComp = "{SIAM} J. Comput." }
+ @String{SIAMMatrix = "{SIAM} Journal on Matrix Analysis and Applications" }
+ @String{SIAMMatrix = "{SIAM} J. Matrix Anal. Appl." }
+ @String{SIAMNumAnal = "{SIAM} Journal on Numerical Analysis" }
+ @String{SIAMNumAnal = "{SIAM} J. Numer. Anal." }
+ @String{SIAMReview = "{SIAM} Review" }
+ @String{SIAMReview = "{SIAM} Rev." }
+ @String{SIAMSciStat = "{SIAM} Journal on Scientific and Statistical
+     Computing" }
+ @String{SIAMSciStat = "{SIAM} J. Sci. Statist. Comput." }
+
+ @String{SoftPracExp = "Software Practice and Experience" }
+ @String{SoftPracExp = "Software Prac. Experience" } % didn't find in AMS MR
+ @String{StatScience = "Statistical Science" }
+ @String{StatScience = "Statist. Sci." }
+ @String{Techno = "Technometrics" }
+ @String{USSRCompMathPhys = "{USSR} Computational Mathematics and Mathematical
+     Physics" }
+ @String{USSRCompMathPhys = "{U. S. S. R.} Comput. Math. and Math. Phys." }
+ @String{VLSICompSys = "Journal of {VLSI} and Computer Systems" }
+ @String{VLSICompSys = "J. {VLSI} Comput. Syst." }
+ @String{ZAngewMathMech = "Zeitschrift fur Angewandte Mathematik und
+     Mechanik" }
+ @String{ZAngewMathMech = "Z. Angew. Math. Mech." }
+ @String{ZAngewMathPhys = "Zeitschrift fur Angewandte Mathematik und Physik" }
+ @String{ZAngewMathPhys = "Z. Angew. Math. Phys." }
+
+% Publishers % ================================================= |
+
+ @String{Academic = "Academic Press" }
+ @String{ACMPress = "{ACM} Press" }
+ @String{AdamHilger = "Adam Hilger" }
+ @String{AddisonWesley = "Addison-Wesley" }
+ @String{AllynBacon = "Allyn and Bacon" }
+ @String{AMS = "American Mathematical Society" }
+ @String{Birkhauser = "Birkha{\"u}ser" }
+ @String{CambridgePress = "Cambridge University Press" }
+ @String{Chelsea = "Chelsea" }
+ @String{ClaredonPress = "Claredon Press" }
+ @String{DoverPub = "Dover Publications" }
+ @String{Eyolles = "Eyolles" }
+ @String{HoltRinehartWinston = "Holt, Rinehart and Winston" }
+ @String{Interscience = "Interscience" }
+ @String{JohnsHopkinsPress = "The Johns Hopkins University Press" }
+ @String{JohnWileySons = "John Wiley and Sons" }
+ @String{Macmillan = "Macmillan" }
+ @String{MathWorks = "The Math Works Inc." }
+ @String{McGrawHill = "McGraw-Hill" }
+ @String{NatBurStd = "National Bureau of Standards" }
+ @String{NorthHolland = "North-Holland" }
+ @String{OxfordPress = "Oxford University Press" }  %address Oxford or London?
+ @String{PergamonPress = "Pergamon Press" }
+ @String{PlenumPress = "Plenum Press" }
+ @String{PrenticeHall = "Prentice-Hall" }
+ @String{SIAMPub = "{SIAM} Publications" }
+ @String{Springer = "Springer-Verlag" }
+ @String{TexasPress = "University of Texas Press" }
+ @String{VanNostrand = "Van Nostrand" }
+ @String{WHFreeman = "W. H. Freeman and Co." }
+
+%Entries
+
+@article{ficara2011differential,
+  title={Differential encoding of DFAs for fast regular expression matching},
+  author={Ficara, Domenico and Di Pietro, Andrea and Giordano, Stefano and Procissi, Gregorio and Vitucci, Fabio and Antichi, Gianni},
+  journal={IEEE/ACM Transactions on Networking (TON)},
+  volume={19},
+  number={3},
+  pages={683--694},
+  year={2011},
+  publisher={IEEE Press}
+}
+
+@inproceedings{backurs2016regular,
+  title={Which Regular Expression Patterns are Hard to Match?},
+  author={Backurs, Arturs and Indyk, Piotr},
+  booktitle={Foundations of Computer Science (FOCS), 2016 IEEE 57th Annual Symposium on},
+  pages={457--466},
+  year={2016},
+  organization={IEEE}
+}
+
+@inproceedings{li2009reggae,
+  title={Reggae: Automated test generation for programs using complex regular expressions},
+  author={Li, Nuo and Xie, Tao and Tillmann, Nikolai and de Halleux, Jonathan and Schulte, Wolfram},
+  booktitle={Automated Software Engineering, 2009. ASE'09. 24th IEEE/ACM International Conference on},
+  pages={515--519},
+  year={2009},
+  organization={IEEE}
+}
+
+@inproceedings{larson2016generating,
+  title={Generating Evil Test Strings for Regular Expressions},
+  author={Larson, Eric and Kirk, Anna},
+  booktitle={Software Testing, Verification and Validation (ICST), 2016 IEEE International Conference on},
+  pages={309--319},
+  year={2016},
+  organization={IEEE}
+}
+
+@article{kiezun2012hampi,
+  title={{HAMPI}: A solver for word equations over strings, regular expressions, and context-free grammars},
+  author={Kiezun, Adam and Ganesh, Vijay and Artzi, Shay and Guo, Philip J and Hooimeijer, Pieter and Ernst, Michael D},
+  journal={ACM Transactions on Software Engineering and Methodology (TOSEM)},
+  volume={21},
+  number={4},
+  pages={25},
+  year={2012},
+  publisher={ACM}
+}
+
+@inproceedings{kiezun2009hampi,
+  title={HAMPI: a solver for string constraints},
+  author={Kiezun, Adam and Ganesh, Vijay and Guo, Philip J and Hooimeijer, Pieter and Ernst, Michael D},
+  booktitle={Proceedings of the eighteenth international symposium on Software testing and analysis},
+  pages={105--116},
+  year={2009},
+  organization={ACM}
+}
+
+@inproceedings{zhao2005fully,
+  title={Fully automatic wrapper generation for search engines},
+  author={Zhao, Hongkun and Meng, Weiyi and Wu, Zonghuan and Raghavan, Vijay and Yu, Clement},
+  booktitle={Proceedings of the 14th international conference on World Wide Web},
+  pages={66--75},
+  year={2005},
+  organization={ACM}
+}
+
+@inproceedings{hutchings2002assisting,
+  title={Assisting network intrusion detection with reconfigurable hardware},
+  author={Hutchings, Brad L and Franklin, Rob and Carver, Daniel},
+  booktitle={Field-Programmable Custom Computing Machines, 2002. Proceedings. 10th Annual IEEE Symposium on},
+  pages={111--120},
+  year={2002},
+  organization={IEEE}
+}
+
+@article{ficara2008improved,
+  title={An improved DFA for fast regular expression matching},
+  author={Ficara, Domenico and Giordano, Stefano and Procissi, Gregorio and Vitucci, Fabio and Antichi, Gianni and Di Pietro, Andrea},
+  journal={ACM SIGCOMM Computer Communication Review},
+  volume={38},
+  number={5},
+  pages={29--40},
+  year={2008},
+  publisher={ACM}
+}
+
+@misc{regex101,
+  title = {Online regex tester, debugger with highlighting for {PHP}, {PCRE}, {P}ython, {Golang} and {J}ava{S}cript},
+  howpublished = {\url{https://regex101.com/}}
+}
+@misc{regexr,
+  title = {RegExr: Learn, Build, and Test RegEx},
+  howpublished = {\url{https://regexr.com/}}
+}
+
+@misc{rexlimits,
+  title = {Rex-Symbolic Regular Expression Exploration},
+  howpublished = {\url{https://channel9.msdn.com/Blogs/Peli/Margus-Veanes-Rex-Symbolic-Regular-Expression-Exploration/}}
+}
+@misc{regexper,
+  title = {Regular expression visualizer using railroad diagrams},
+  howpublished = {\url{https://regexper.com/}}
+}
+
+@misc{rise4fun,
+  title = {Rex @ rise4fun from Microsoft},
+  howpublished = {\url{http://rise4fun.com/rex/}}
+}
+
+@misc{bugRegex,
+  title = {TimecountTimingType regex is wrong},
+  howpublished = {\url{https://github.com/ebu/ebu-tt-live-toolkit/issues/67}}
+}
+@inproceedings{rex,
+  title={Rex: Symbolic regular expression explorer},
+  author={Veanes, Margus and De Halleux, Peli and Tillmann, Nikolai},
+  booktitle={Software Testing, Verification and Validation (ICST), 2010 Third International Conference on},
+  pages={498--507},
+  year={2010},
+  organization={IEEE}
+}
+
+@book{sipser2006introduction,
+  title={Introduction to the Theory of Computation},
+  author={Sipser, Michael},
+  volume={2},
+  year={2006},
+  publisher={Thomson Course Technology Boston}
+}
+
+@Misc{brics,
+  author =  {Anders M\o{}ller},
+  title =   {dk.brics.automaton -- Finite-State Automata
+             and Regular Expressions for {{J}ava}},
+  note =    {\texttt{http://www.brics.dk/automaton/}},
+  year =    2017
+}
+
+@article{re2,
+  title={Regular expression matching in the wild},
+  author={Cox, Russ},
+  journal={URL:\url{http//swtch.com/\~rsc/regexp/regexp3.html}},
+  year={2010}
+}
+
+@article{cox2007regular,
+title={Regular expression matching can be simple and fast (but is slow in {J}ava, {P}erl, {PHP}, {P}ython, {R}uby,...)},
+author={Cox, Russ},
+journal={URL:\url{http//swtch.com/\~rsc/regexp/regexp1.html}},
+year={2007}
+}
+
+@article{reporeaper,
+  title={Curating {G}it{H}ub for engineered software projects},
+  author={Munaiah, Nuthan and Kroh, Steven and Cabrey, Craig and Nagappan, Meiyappan},
+  journal={Empirical Software Engineering},
+  volume={22},
+  number={6},
+  pages={3219--3253},
+  year={2017},
+  publisher={Springer}
+}
+
+@article{repo,
+  title={Curating {G}it{H}ub for engineered software projects},
+  author={Munaiah, Nuthan and Kroh, Steven and Cabrey, Craig and Nagappan, Meiyappan},
+  journal={Empirical Software Engineering},
+  pages={1--35},
+  year={2016},
+  publisher={Springer}
+}
+
+@book{ammann2016introduction,
+  title={Introduction to software testing},
+  author={Ammann, Paul and Offutt, Jeff},
+  year={2016},
+  publisher={Cambridge University Press}
+}
+
+@inproceedings{soot,
+  title={Soot-a {J}ava bytecode optimization framework},
+  author={Vall{\'e}e-Rai, Raja and Co, Phong and Gagnon, Etienne and Hendren, Laurie and Lam, Patrick and Sundaresan, Vijay},
+  booktitle={Proceedings of the 1999 conference of the Centre for Advanced Studies on Collaborative research},
+  pages={13},
+  year={1999},
+  organization={IBM Press}
+}
+
+@inproceedings{kirrage2013static,
+  title={Static analysis for regular expression denial-of-service attacks},
+  author={Kirrage, James and Rathnayake, Asiri and Thielecke, Hayo},
+  booktitle={International Conference on Network and System Security},
+  pages={135--148},
+  year={2013},
+  organization={Springer}
+}
+
+@inproceedings{halfond2006classification,
+  title={A classification of {SQL}-injection attacks and countermeasures},
+  author={Halfond, William G and Viegas, Jeremy and Orso, Alessandro},
+  booktitle={Proceedings of the IEEE International Symposium on Secure Software Engineering},
+  volume={1},
+  pages={13--15},
+  year={2006},
+  organization={IEEE}
+}
+
+@inproceedings{randoop,
+  title={Randoop: feedback-directed random testing for {J}ava},
+  author={Pacheco, Carlos and Ernst, Michael D},
+  booktitle={Companion to the 22nd ACM SIGPLAN conference on Object-oriented programming systems and applications companion},
+  pages={815--816},
+  year={2007},
+  organization={ACM}
+}
+
+@inproceedings{klee,
+  title={{KLEE}: Unassisted and Automatic Generation of High-Coverage Tests for Complex Systems Programs.},
+  author={Cadar, Cristian and Dunbar, Daniel and Engler, Dawson R and others},
+  booktitle={OSDI},
+  volume={8},
+  pages={209--224},
+  year={2008}
+}
+
+@misc{browser,
+  title = "Why does this {J}ava{S}cript match() function Crash My Browser?",
+  lastaccessed = "Aug 22, 2017",
+  howpublished = {\url{https://stackoverflow.com/questions/12825950/why-does-this-javascript-match-function-crash-my-browser}}
+}
+
+@misc{stackoverflow,
+  title = "Outage Postmortem - July 20, 2016",
+  lastaccessed = "July 20, 2016",
+  howpublished = {\url{http://stackstatus.net/post/147710624694/outage-postmortem-july-20-2016}}
+}
+
+@inproceedings{javassist,
+  title={{Javassist}-a reflection-based programming wizard for {J}ava},
+  author={Chiba, Shigeru},
+  booktitle={Proceedings of OOPSLA'98 Workshop on Reflective Programming in C++ and {J}ava},
+  volume={174}, 
+  pages={21},
+  year={1998}
+}
+
+
+@inproceedings{xie2005symstra,
+    title={Symstra: A Framework for Generating Object-Oriented Unit Tests Using Symbolic Execution.},
+    author={Xie, Tao and Marinov, Darko and Schulte, Wolfram and Notkin, David},
+    booktitle={TACAS},
+    volume={3440},
+    pages={365--381},
+    year={2005},
+    organization={Springer}
+}
+
+@inproceedings{bucur2011parallel,
+  title={Parallel symbolic execution for automated real-world software testing},
+  author={Bucur, Stefan and Ureche, Vlad and Zamfir, Cristian and Candea, George},
+  booktitle={Proceedings of the sixth conference on Computer systems},
+  pages={183--198},
+  year={2011},
+  organization={ACM}
+}
+
+@article{malaiya2002software,
+  title={Software reliability growth with test coverage},
+  author={Malaiya, Yashwant K and Li, Michael Naixin and Bieman, James M and Karcich, Rick},
+  journal={IEEE Transactions on Reliability},
+  volume={51},
+  number={4},
+  pages={420--426},
+  year={2002},
+  publisher={IEEE}
+}
+
+@article{zhu1997software,
+  title={Software unit test coverage and adequacy},
+  author={Zhu, Hong and Hall, Patrick AV and May, John HR},
+  journal={Acm computing surveys (csur)},
+  volume={29},
+  number={4},
+  pages={366--427},
+  year={1997},
+  publisher={ACM}
+}
+
+@inproceedings{li2009experimental,
+  title={An experimental comparison of four unit test criteria: Mutation, edge-pair, all-uses and prime path coverage},
+  author={Li, Nan and Praphamontripong, Upsorn and Offutt, Jeff},
+  booktitle={Software Testing, Verification and Validation Workshops, 2009. ICSTW'09. International Conference on},
+  pages={220--229},
+  year={2009},
+  organization={IEEE}
+}
+
+@inproceedings{piwowarski1993coverage,
+  title={Coverage measurement experience during function test},
+  author={Piwowarski, Paul and Ohba, Mitsuru and Caruso, Joe},
+  booktitle={Proceedings of the 15th international conference on Software Engineering},
+  pages={287--301},
+  year={1993},
+  organization={IEEE Computer Society Press}
+}
+
+@inproceedings{zhang2011combined,
+  title={Combined static and dynamic automated test generation},
+  author={Zhang, Sai and Saff, David and Bu, Yingyi and Ernst, Michael D},
+  booktitle={Proceedings of the 2011 International Symposium on Software Testing and Analysis},
+  pages={353--363},
+  year={2011},
+  organization={ACM}
+}
+
+@inproceedings{fraser2013does,
+  title={Does automated white-box test generation really help software testers?},
+  author={Fraser, Gordon and Staats, Matt and McMinn, Phil and Arcuri, Andrea and Padberg, Frank},
+  booktitle={Proceedings of the 2013 International Symposium on Software Testing and Analysis},
+  pages={291--301},
+  year={2013},
+  organization={ACM}
+}
+
+@inproceedings{pacheco2007randoop,
+  title={Randoop: feedback-directed random testing for {J}ava},
+  author={Pacheco, Carlos and Ernst, Michael D},
+  booktitle={Companion to the 22nd ACM SIGPLAN conference on Object-oriented programming systems and applications companion},
+  pages={815--816},
+  year={2007},
+  organization={ACM}
+}
+
+@article{jpf,
+  title={{JPF--SE}: A symbolic execution extension to {J}ava pathfinder},
+  author={Anand, Saswat and P{\u{a}}s{\u{a}}reanu, Corina and Visser, Willem},
+  journal={Tools and Algorithms for the Construction and Analysis of Systems},
+  pages={134--138},
+  year={2007},
+  publisher={Springer}
+}
+
+@inproceedings{li2008regular,
+  title={Regular expression learning for information extraction},
+  author={Li, Yunyao and Krishnamurthy, Rajasekar and Raghavan, Sriram and Vaithyanathan, Shivakumar and Jagadish, HV},
+  booktitle={Proceedings of the Conference on Empirical Methods in Natural Language Processing},
+  pages={21--30},
+  year={2008},
+  organization={Association for Computational Linguistics}
+}
+
+@inproceedings{beck2014regviz,
+    title={RegViz: visual debugging of regular expressions},
+    author={Beck, Fabian and Gulan, Stefan and Biegel, Benjamin and Baltes, Sebastian and Weiskopf, Daniel},
+    booktitle={Companion Proceedings of the 36th International Conference on Software Engineering},
+    pages={504--507},
+    year={2014},
+    organization={ACM}
+}
+
+@book{friedl2002mastering,
+  title={Mastering regular expressions},
+  author={Friedl, Jeffrey EF},
+  year={2002},
+  publisher={" O'Reilly Media, Inc."}
+}
+
+@article{king1976symbolic,
+  title={Symbolic execution and program testing},
+  author={King, James C},
+  journal={Communications of the ACM},
+  volume={19},
+  number={7},
+  pages={385--394},
+  year={1976},
+  publisher={ACM}
+}
+
+@inproceedings{tillmann2008pex,
+  title={Pex--white box test generation for. net},
+  author={Tillmann, Nikolai and De Halleux, Jonathan},
+  booktitle={International conference on tests and proofs},
+  pages={134--153},
+  year={2008},
+  organization={Springer}
+}
+
+@inproceedings{de2008z3,
+  title={Z3: An efficient {SMT} solver},
+  author={De Moura, Leonardo and Bj{\o}rner, Nikolaj},
+  booktitle={International conference on Tools and Algorithms for the Construction and Analysis of Systems},
+  pages={337--340},
+  year={2008},
+  organization={Springer}
+}
+
+@inproceedings{wassermann2008dynamic,
+  title={Dynamic test input generation for web applications},
+  author={Wassermann, Gary and Yu, Dachuan and Chander, Ajay and Dhurjati, Dinakar and Inamura, Hiroshi and Su, Zhendong},
+  booktitle={Proceedings of the 2008 international symposium on Software testing and analysis},
+  pages={249--260},
+  year={2008},
+  organization={ACM}
+}

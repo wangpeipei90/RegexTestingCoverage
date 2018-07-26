@@ -1,0 +1,25 @@
+\section{Results}
+\label{sec:results}
+\begin{table}[t]
+\centering
+\caption{Distribution of Regular Expressions' attributes}
+\label{regex:distr}
+\begin{tabular}{lllllllll}
+Attribute       & mean & min & max     & 25\% & 50\% & 75\% & 90\% & 99\%  \\
+Nodes(DFA Size) & 156  & 2   & 433508  & 9    & 21   & 72   & 387  & 948   \\
+Edges           & 604  & 1   & 2348520 & 15   & 56   & 214  & 1013 & 2811  \\
+Edge Pairs      & 2221 & 0   & 8693181 & 14   & 94   & 409  & 1597 & 16359 \\
+Total Inputs    & 386  & 1   & 595642  & 2    & 4    & 24   & 168  & 3128  \\
+Unique Inputs   & 5    & 1   & 34      & 1    & 2    & 5    & 13   & 32    \\
+Projects		& 1	   & 1	 & 129    & 1    & 1     & 1    & 1    & 5
+\end{tabular}
+\end{table}
+This section presents our results of the three research questions in order. 
+
+We generated static and dynamic DFAs for in total 15091 regular expressions from 1665 Java GitHub projects\footnote{add url for repo data}. Among all the regular expressions, XXX could not build their static DFAs either because it contains regular expression features unsupported by RE2 or because the length of regular expression string is larger than the string length limit of bash scripts(i.e.131071) or because the regular expression string contains null byte which is not valid in bash scripts. For the remaining 14638 regular expressions, we dropped 9 because they are used across over 166 projects (10\% of total projects), and dropped 1419 because their unique inputs for matching is beyond the 90 percentile of all regular expressions. The coverage analysis are based on the final 13210 regular expressions and 1428 projects. 
+
+Table~\ref{regex:distr} describes the distribution of the regular expressions' attributes. 75\% of the all regular expressions keep a simple DFA graph. The matching between a regular expression and a input string could be repeated multiple times in the same project or across multiple projects. Almost all the regular expressions are used in only one project. The regular expressions used in the third-party libraries still exist but there are only few of them.
+
+\input{rq1}
+\input{rq2}
+\input{rq3}
