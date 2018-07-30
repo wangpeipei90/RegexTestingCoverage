@@ -16,12 +16,12 @@ Adding a mutation step to the input string may be effective at forcing the Rex-g
 
 With automatically-generated strings, one threat is usability. For the developer-written tests, it is likely that the regular expression strings are more meaningful in context than they are for the Rex-generated strings. Future work will look at the overlap in content between the test inputs from the repository and from Rex. 
 
-However, it may not always be possible to achieve 100\% test coverage, even with a perfect string generation tool. There are regular expressions that be untested because they are unreachable. Some regular expressions have hard-coded matching inputs, which makes it impossible to improve the coverage; for example: \lt{boolean isMatch = Pattern.matches("a*b", "ab");}
+However, it may not always be possible to achieve 100\% test coverage, even with a perfect string generation tool. There are regular expressions that are untested because they are unreachable. Some regular expressions have hard-coded matching inputs, which makes it impossible to improve the coverage; for example: \lt{boolean isMatch = Pattern.matches("a*b", "ab");}
 Future work for improving coverage levels should also consider the potential for improvement based on such factors. 
 
 %\paragraph{Beyond Structural Coverage}
 \textbf{Beyond Structural Coverage: } 
-The metrics we explore are structural metrics, which can identify faults that are revealed in the structure of the DFA, such as the example in Figure~\ref{sec:coverageexample}. 
+The metrics we explore are structural metrics, which can identify faults that are revealed in the structure of the DFA, such as the example in Section~\ref{sec:coverageexample}. 
 Alternately, as suggested in prior work~\cite{chapman2017exploring}, refactoring could potentially reveal this particular fault, as the numeric representation \verb![0-9]! was found to be more understandable than \verb!\d!. Performing the replacement might alert the developer that \verb!d! should be \verb!\d!. 
 
 In terms of improving regular expression testing, structural metrics are a first step. 

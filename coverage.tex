@@ -9,7 +9,7 @@
 %%However, these metrics 
 %ignore much of the complexity within the regular expression. 
 We explore fine-grained coverage metrics for regular expressions based on a DFA representation. 
-The intuition is that since regular expressions are equivalent to DFAs~\cite{sipser2006introduction}, and 96\% of regular expressions in the wild were found to be regular (Section~\ref{regularregularexpressions}), then graph coverage metrics over the DFA can be used to test the behavior within the regular expression.  
+The intuition is that since regular expressions are equivalent to DFAs~\cite{sipser2006introduction}, and 96\% of regular expressions in the wild were found to be regular (Section~\ref{regularregularexpressions}), then graph coverage metrics over the DFA can be used to test the behavior within most regular expressions.  
 We discuss three levels of coverage: Node Coverage (NC), Edge Coverage (EC), and Edge-Pair Coverage (EPC). These coverage metrics are adopted from graph coverage metrics proposed by Ammann and Offutt~\cite[Chapter 7]{ammann2016introduction}. 
 %We explore these coverage metrics in the context of real programs in Section~\ref{sec:rq2}. 
 %, and Exit Coverage (EXC)
@@ -108,7 +108,7 @@ To illustrate the coverage levels, consider the graph $G$ for the regular expres
 Traversing $G$ visits $0 \rightarrow 1 \rightarrow 3$ (recall that ``2'' is interpreted as the byte stream [50 256]). Node~$3$ is the accept node, which denotes that the regular expression matches the input string (i.e., $s \in L(R)$). 
 During the traversal of $G$, nodes \{0, 1, 3\} are visited, meaning that $N_{cov} = \{0, 1, 3\}$, $E_{cov} = \{\overrightarrow{01}, \overrightarrow{13}\}$, and $EP_{cov} = \{\overrightarrow{013}\}$. 
 %Therefore, this process covers three visited nodes (i.e., 0, 1, and 3), two visited edges (i.e., $\overrightarrow{01}$, and $\overrightarrow{13}$), and one visited edge pair (i.e., $\overrightarrow{013}$). %This is a successful match. 
-The coverage levels for \verb!\d+! by input strings $S = \{s_0\}$ are: $NC$ = 60\%(3/5), $EC$ =  28.6\% (2/7), and $EPC$ =  12.5\% (1/8).% 4) EXC 0\%(0/2).
+The coverage levels for \verb!\d+! by input strings $S = \{s_0\}$ are: $NC$ = 60\%~(3/5), $EC$ =  28.6\% (2/7), and $EPC$ =  12.5\% (1/8).% 4) EXC 0\%(0/2).
 %2~$\rightarrow$~1, 2~$\rightarrow$~3, and 3~$\rightarrow$~5
 %2~$\rightarrow$~3~$\rightarrow$~5
 
@@ -127,7 +127,7 @@ $NC$ = 80\% (4/5), $EC$ = 71.4\% (5/7), and $EP$ = 62.5\% (5/8).
 As an example of a non-matching string, let $s_2$ = ``u'', which is interpreted as the byte stream {\tt [117 256]}. 
 The path traversed in $G$ is $0 \rightarrow e$; after reaching $e$, the processing stops. 
 Node $e$ is added to $N_{cov}$, edge $\overrightarrow{0e}$ is added to $E_{cov}$, and there is no change to $EP_{cov}$. 
-Considering $S = \{s_0, s_1, s_2\}$, the combined coverage levels are: $NC$ = 100\% (5/5), $EC$ = 85.7\% (6/7), and $EPC$ =  62.5\% (5/8). %4) EXC 50\%(1/2).
+Considering $S = \{s_0, s_1, s_2\}$, the combined coverage levels are: $NC$~= 100\% (5/5), $EC$ = 85.7\% (6/7), and $EPC$ =  62.5\% (5/8). %4) EXC 50\%(1/2).
 %, and one exit (i.e., $\overrightarrow{21}$)
 %2~$\rightarrow$~2 and 2~$\rightarrow$~1
 %2~$\rightarrow$~2~$\rightarrow$~2, 2~$\rightarrow$~2~$\rightarrow$~1

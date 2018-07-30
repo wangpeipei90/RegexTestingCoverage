@@ -22,7 +22,7 @@ A regular expression is a sequence of characters that defines a search pattern.
 The set of strings matched by the regular expression is a language. 
 That is, a regular expression $R$ represents a language $L(R)$ over an alphabet $\Sigma$, where $L(R)$ is a (possibly infinite) set of strings. 
 For a given language, there are many regular expressions that can describe it. 
-A regular expression can be represented as a string of tokens, a finite state automaton in deterministic (DFA), or a non-deterministic (NFA) form.%, or  a parse tree.
+A regular expression can be represented as a string of tokens, a finite state automaton in deterministic (DFA) form, or in non-deterministic (NFA) form.%, or  a parse tree.
 
 
 In this work, we explore test coverage metrics over the DFA representing a regular expression. This requires three informal explorations to ensure feasibility and assess the potential impact. 
@@ -570,9 +570,25 @@ Reg. exp./tested site & 5 & 1 & 1 & 2 & 5 & 38 \\
 \end{table}
 
 
+
+
+\subsubsection{RE2 Analysis}
+ Since RE2 only supports the most common regular expression language features, we filtered out the regular expressions containing advanced and non-regular features.
+%  (e.g., capturing group, possessive match, backreference, etc). In this way, 402 syntactically unique regular expressions are removed from the original 14,040 ones(the dataset after removal third-party libraries). The size of regular expression to analyze dropped from 15,562 to 15,105. The number of GitHub projects are decreased from 1,256 to 1,225.
+RE2 failed to construct DFAs for 457 regular expressions, leaving 15,105 regular expressions spread across 1,225 projects.\footnote{Assuming all 457 are non-regular, this means over 97\% of the regular expressions sampled are regular, echoing findings from the Python analysis in Section~\ref{regularregularexpressions}.} 
+The RE2 limitations on input string length and the null byte affected 56 regular expressions and 191 input strings, and nine of the 56 regular expressions are removed from coverage analysis because their only input string is dropped. 
+
+These 1,225 projects contain  18,426 call sites of the instrumented functions. Only 3,093 call sites are executed by the test suites; the same call site can have many regular expressions in the case of dynamically generated regular expressions. 
+%From the 14,040 syntactically unique regular expressions collected, RE2 failed to generate DFAs for 402, leaving 13,638 syntactically unique regular expressions, spread across 1,225 projects and constructs 15,105 regular expressions. 
+
+%The remaining dataset has 1,225 projects, 15,096 regular expressions, of which 13,632 are syntactically unique.
+
+The final dataset used for analysis contains 1,225 projects, 3,093 call sites, 15,096 regular expressions, of which 13,632 are syntactically unique. As the same regular expression can appear in multiple projects, or multiple places in the same project, all are retained since each is potentially tested differently. These 15,096 regular expressions are executed by 899,804 test inputs. %The overall full matches in the 1,225 projects are 1,8426.
+
+
 \begin{table}[tb]
 %\centering
-\caption{Description of 15,096 regular expressions analyzed for RQ1. All numbers are rounded to nearest integer}% \todo{shouldn't this be 15,096?}}
+\caption{Description of 15,096 regular expressions analyzed for RQ1. All numbers are rounded to nearest integer.}% \todo{shouldn't this be 15,096?}}
 \label{regex:distriregex}
 \vspace{-6pt}
 \begin{small}
@@ -606,22 +622,8 @@ Input string len. & 125 & 9 & 17 & 63 & 318 & 948 \\
 %\vspace{-12pt}
 \end{table}
 
-
-\subsubsection{RE2 Analysis}
- Since RE2 only supports the most common regular expression language features, we filtered out the regular expressions containing advanced and non-regular features.
-%  (e.g., capturing group, possessive match, backreference, etc). In this way, 402 syntactically unique regular expressions are removed from the original 14,040 ones(the dataset after removal third-party libraries). The size of regular expression to analyze dropped from 15,562 to 15,105. The number of GitHub projects are decreased from 1,256 to 1,225.
-RE2 failed to construct DFAs for 457 regular expressions, leaving 15,105 regular expressions spread across 1,225 projects.\footnote{Assuming all 457 are non-regular, this means over 97\% of the regular expressions sampled are regular, echoing findings from the Python analysis in Section~\ref{regularregularexpressions}.} 
-The RE2 limitations on input string length and the null byte affected 56 regular expressions and 191 input strings, and nine of the 56 regular expressions are removed from coverage analysis because their only input string is dropped. 
-
-These 1,225 projects contain  18,426 call sites of the instrumented functions. Only 3,093 call sites are executed by the test suites; the same call site can have many regular expressions in the case of dynamically generated regular expressions. 
-%From the 14,040 syntactically unique regular expressions collected, RE2 failed to generate DFAs for 402, leaving 13,638 syntactically unique regular expressions, spread across 1,225 projects and constructs 15,105 regular expressions. 
-
-%The remaining dataset has 1,225 projects, 15,096 regular expressions, of which 13,632 are syntactically unique.
-
-The final dataset used for analysis contains 1,225 projects, 3,093 call sites, 15,096 regular expressions, of which 13,632 are syntactically unique. As the same regular expression can appear in multiple projects, or multiple places in the same project, all are retained since each is potentially tested differently. These 15,096 regular expressions are executed by 899,804 test inputs. %The overall full matches in the 1,225 projects are 1,8426.
-
 \subsubsection{Project Characteristics}
-Table~\ref{regex:distriprojects} describes the 1,225 projects in terms of {\em Tested regular exp.} (numbers of tested regular expressions per project), {\em stars} (a measure of popularity), {\em KLOC} (lines of code in thousand), {\em size} (size of the repository in KB),  {\em test ratio} (the ratio of number of lines of code in test files to the total lines of code in repository, as reported by RepoReaper), \emph{Call sites} (the number of FullMatch methods in the source code), \emph{Tested call sites} (the number of FullMatch call sites executed by the tests), and \emph{Reg. exp. / tested site} (the number of regular expressions passed to each tested call site). 
+Table~\ref{regex:distriprojects} describes the 1,225 projects in terms of {\em Tested regular exp.} (numbers of tested regular expressions per project), {\em Stars} (a measure of popularity), {\em KLOC} (lines of code in thousands), {\em Size} (size of the repository in KB),  {\em Test ratio} (the ratio of number of lines of code in test files to the total lines of code in repository, as reported by RepoReaper), \emph{Call sites} (the number of FullMatch methods in the source code), \emph{Tested call sites} (the number of FullMatch call sites executed by the tests), and \emph{Reg. exp. / tested site} (the number of regular expressions passed to each tested call site). 
 The \emph{mean} column describes the average value for each attribute. Columns {\em 25\%, 50\%, 75\%, 90\%}, and {\em 99\%} show the distribution of each attribute at 25 percentile, median, 75 percentile, 90 percentile, and 99 percentile, respectively. 
 %We sampled regular expressions per project through the instrumentation, so only those regular expressions in the instrumented functions appear in our dataset. Thus, the number of regular expressions reported in Table~\ref{regex:distriprojects} per project is an underestimate. However, this is unlikely to impact the coverage levels, which is the ultimate goal of this research.  
 The average number of tested regular expressions collected per project was 12 with a range of 1 to 2,004. %\todo{is the upper bound on this range correct?}
@@ -681,7 +683,7 @@ Rex defaults
 to \emph{ManyMatch} as opposed to the \emph{FullMatch} behavior of our dataset. 
 To force Rex to treat each regular expression as a full match, we added endpoint anchors (i.e., \verb!^! and \verb!$!) to each regular expression. 
 Because Rex may get stuck in generating input strings for certain regular expressions, we set a timeout of one hour for Rex to generate strings; regular expressions that exceed the timeout are discarded. %If Rex could not finish the generation of strings for a regular expression in one hour, we discard that regular expression in the further analysis. 
-Of the 10,155 regular expressions in GitHub whose $S_{succ}>1$, Rex encountered the timeout for only two. %\todo{what was the timeout? why was this necessary?}
+Of the 10,155 regular expressions in GitHub whose $\lvert S_{succ} \rvert >1$, Rex encountered the timeout for only two. %\todo{what was the timeout? why was this necessary?}
  
  Another complication comes at the intersection of the Rex and RE2 language support; Rex-generated strings must be processed by RE2 for the coverage analysis. 
 %These tool-generated strings need further validation because of the different regular expression grammars between Rex and RE2. 
@@ -694,17 +696,17 @@ To simplify the experiment, we configured Rex to generated strings in ASCII. We 
 %\paragraph{Filtering in Rex.} 
 
 After filtering out all the unsupported regular expressions, our reported coverages by Rex strings in ASCII encoding are based on 7,926 regular expressions of 985 GitHub projects; 7,007 of them are syntactically unique. 
-Table~\ref{succ:ascii} shows the attributes of regular expressions of which Rex could generate regular expressions. %Coverage is based on $S_{succ}$, so only the successful inputs are shown. 
+Table~\ref{succ:ascii} shows the attributes of regular expressions for which Rex could generate strings. %Coverage is based on $S_{succ}$, so only the successful inputs are shown. 
 
 \begin{table}[tb]
-\caption{Description of 7,926 regular expressions for RQ2.}
+\caption{Description of 7,926 regular expressions analyzed for RQ2. All numbers are rounded to nearest integer.}
 \label{succ:ascii}
 \vspace{-6pt}
 \begin{small}
-\begin{tabular}{p{2cm}
+\begin{tabular}{p{2.2cm}
+>{\raggedleft\arraybackslash}p{0.6cm}
 >{\raggedleft\arraybackslash}p{0.6cm}
 >{\raggedleft\arraybackslash}p{0.5cm}
->{\raggedleft\arraybackslash}p{0.6cm}
 >{\raggedleft\arraybackslash}p{0.6cm}
 >{\raggedleft\arraybackslash}p{0.6cm}
 >{\raggedleft\arraybackslash}p{0.7cm}}
@@ -713,10 +715,11 @@ Attributes & mean & 25\% & 50\% & 75\% & 90\% & 99\%  \\
 \hline
 Nodes ($\lvert N \rvert$) & 220 & 13 & 31 & 162 & 618 & 970 \\  
 Edges ($\lvert E \rvert$) & 773 & 30 & 97 & 663 & 1,468 & 3,694 \\  
-Edge pairs& 2,422 & 36 & 186 & 1,021 & 1,999 & 21,274 \\
-$\lvert S \rvert$       & 70 & 1 & 2 & 8 & 39 & 961 \\
-$\lvert S_{succ} \rvert$& 34 & 1 & 1 & 2 & 8 & 208 \\  
+Edge pairs ($\lvert EP \rvert$) & 2,422 & 36 & 186 & 1,021 & 1,999 & 21,274 \\
 Regular exp. len. & 29 & 12 & 15 & 31 & 71 & 160 \\
+\# Input strings ($\lvert S \rvert$)        & 70 & 1 & 2 & 8 & 39 & 961 \\
+$\lvert S_{succ} \rvert$& 34 & 1 & 1 & 2 & 8 & 208 \\  
+
 %Input length avg. &  &  &  &  &  &  \\  
 %Input length dev. &  &  &  &  &  &  \\
 \hline
@@ -735,13 +738,13 @@ We generate input string sets of three sizes: equal to $\lvert S_{succ} \rvert$;
 For example, say a regular expression $R$ from GitHub has five input strings; $\lvert S \rvert = 5$. Three of the input strings are matching; $\lvert S_{succ} \rvert = 3$. For this experiment, Rex would generate three strings ten times, then 15 strings five times, then 30 strings five times, totaling $30 + 75 + 150 = 255$ generated strings. For each set of $\{3, 15, 30\}$ strings, NC, EC, and EPC are computed, averaged over $\{10,5,5\}$ runs. %\todo{check for correctness}
 
 In the case of finite languages, Rex may fail to generate sufficient input strings. For example, the total number of matching input strings in ASCII for a regular expression \verb!\d! is ten (i.e., 0-9). If in the repository there are also three matching input strings, Rex could generate three strings ten times, but would fail to generate $5 \times 3 = 15$ strings. % only ten strings five times and ten strings five times, totaling $30 + 50 + 50 = 130$ generated strings; all sets of ten strings are equal.
-The calculation of NC, EC, and EPC are based on the best-effort: for each run of every regular expression, we calculate coverage with input strings up to $\lvert S_{succ} \rvert$ in \RexSOne, 5x of $\lvert S_{succ} \rvert$ in \RexSFive, and 10x of $\lvert S_{succ} \rvert$ in \RexSTen; and coverage of every regular expression is the averages of its coverages over $\{10,5,5\}$ runs in \RexSOne, \RexSFive, and \RexSTen. In other words, if Rex failed to generate required number of input strings, the coverage is calculated based on the input strings Rex can generate.
+The calculation of NC, EC, and EPC are based on the best-effort: for each run of every regular expression, we calculate coverage with input strings up to $\lvert S_{succ} \rvert$ in \RexSOne, 5x of $\lvert S_{succ} \rvert$ in \RexSFive, and 10x of $\lvert S_{succ} \rvert$ in \RexSTen; and coverage of every regular expression is the averages of its coverages over $\{10,5,5\}$ runs in \RexSOne, \RexSFive, and \RexSTen. In other words, if Rex failed to generate the required number of input strings, the coverage is calculated based on the input strings Rex can generate.
 
 In the ten runs of generating input string sets equal to $\lvert S_{succ} \rvert$ for \RexSOne, there are 833 regular expressions %or 708 syntactically unique regular expressions 
-which have input strings less than $\lvert S_{succ} \rvert$ in at least one run. 
+that have fewer input strings than $\lvert S_{succ} \rvert$ in at least one run. 
 In the five runs of generating input string sets 5x of $\lvert S_{succ} \rvert$ for \RexSFive, there are 2,041 regular expressions %or 1,758 syntactically unique regular expressions 
-which have input strings less than 5x of $\lvert S_{succ} \rvert$ in at least one run. In the five runs of generating input string sets 10x of $\lvert S_{succ} \rvert$ for \RexSTen, there are 2,336 regular expressions %or 1,988 syntactically unique regular expressions 
-which have input strings less than 10x of $\lvert S_{succ} \rvert$ in at least one run.
+that have fewer input strings than 5x of $\lvert S_{succ} \rvert$ in at least one run. In the five runs of generating input string sets 10x of $\lvert S_{succ} \rvert$ for \RexSTen, there are 2,336 regular expressions %or 1,988 syntactically unique regular expressions 
+that have fewer input strings than 10x of $\lvert S_{succ} \rvert$ in at least one run.
 
 
 %We conducted two string-generation experiments. In the first experiment, we made Rex try to generate strings as many as the input strings in Section~\ref{rq1:artifacts}. We repeated the experiment ten times. In the second experiment, we made Rex try to generate strings ten times as many as the inputs in Section~\ref{sec:rq3}. We repeated this experiment five times. Rex generated strings in ASCII encoding and Unicode encoding in each repetition of both the two experiments. For each regular expression in every repetition, we used the system time as the seed to randomly generate strings so that the strings in one repetition could be different from those in other repetitions as much as possible. We calculated the node, edge, and edge-pair coverages for each repetition and used their averages as the final coverages. In every experiment, all the repetitions have same number of generated strings. 
