@@ -80,7 +80,7 @@ Existing tools and techniques can direct test input generation toward areas of u
 One technique among these is symbolic execution~\cite{li2009reggae, king1976symbolic, jpf, klee, Ghosh:2013:JAT:2486788.2486925}, and Rex~\cite{rex} has been developed for symbolic analysis of regular expressions. % but regular expressions are not handled in state-of-the-art tools. 
 % However, complex regular expressions in a program may cause the symbolic constraints too complex to solve, thus limiting its use. 
 %More lightweight  tools have also been introduced to generate strings for regular expression testing~\cite{rex, kiezun2009hampi, brics, Ghosh:2013:JAT:2486788.2486925}.
-However, Rex focuses solely on the matching behavior~\cite{rex}, which limits its ability to cover the false branch in the Java example above. Brics~\cite{brics} and Hampi~\cite{kiezun2009hampi, hampi} similarly only generates passing strings. 
+However, Rex focuses solely on the matching behavior~\cite{rex}, which limits its ability to cover the false branch in the Java example above. Hampi~\cite{kiezun2009hampi, hampi} and brics~\cite{brics} similarly only generates passing strings. 
 %Other tools have the potential to generate both passing and failing strings, such as \todo{which?}. 
 %support limited regular expression features~\cite{rex, brics, Ghosh:2013:JAT:2486788.2486925}, traverse the regular expression from the smallest accepted bytes to largest accepted bytes~\cite{brics}, require specified string length~\cite{kiezun2009hampi, brics, Ghosh:2013:JAT:2486788.2486925}, and
 While useful, there are no guarantees of structural coverage. 

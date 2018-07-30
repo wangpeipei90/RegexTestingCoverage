@@ -2,7 +2,7 @@
 \label{sec:discussion}
 This section summarizes future work based on our findings and discusses threats to validity.
 \subsection{Opportunities For Future Work}
-We have applied graph coverage metrics to regular expressions and looked at how well existing test suites perform according to the metrics. 
+%We have applied graph coverage metrics to regular expressions and looked at how well existing test suites perform according to the metrics. 
 Coverage provides useful stopping criteria for testing. 
 However, high coverage does not necessarily imply test suite effectiveness in source code~\cite{coveragetestsuitecorrelation}, which may also hold true for regular expressions. 
 At the same time, as regular expressions are responsible for many software faults, it is important to explore how to make them less error-prone. Our approach in this work is through test metrics, and there are many areas of future work that follow:
@@ -10,13 +10,13 @@ At the same time, as regular expressions are responsible for many software fault
 %\paragraph{String-generation tool:} 
 \textbf{String-generation tools: } 
 Given the low coverage of regular expressions shown in Figure~\ref{cov:stack}, a natural next step could be to generate strings to achieve high coverage. 
-In RQ2, Rex achieves high structural coverage. % but language limitations mean it can only handle  half the  dataset. 
-It also ignores the failure case, $N_e$, and all edges incident to it. 
+%In RQ2, Rex achieves high structural coverage. % but language limitations mean it can only handle  half the  dataset. 
+%It also ignores the failure case, $N_e$, and all edges incident to it. 
 Adding a mutation step to the input string may be effective at forcing the Rex-generated strings into the error state to cover the uncovered edges and node. An alternate approach may be to provide the complement of the regular expression to Rex as another way to generate failing inputs. 
 
 With automatically-generated strings, one threat is usability. For the developer-written tests, it is likely that the regular expression strings are more meaningful in context than they are for the Rex-generated strings. Future work will look at the overlap in content between the test inputs from the repository and from Rex. 
 
-However, it may not always be possible to achieve 100\% test coverage, even with a perfect string generation tool. There are untested regular expressions that be untested because they are unreachable. Some regular expressions have hard-coded matching inputs, which makes it impossible to improve the coverage; for example: \lt{boolean isMatch = Pattern.matches("a*b", "ab");}
+However, it may not always be possible to achieve 100\% test coverage, even with a perfect string generation tool. There are regular expressions that be untested because they are unreachable. Some regular expressions have hard-coded matching inputs, which makes it impossible to improve the coverage; for example: \lt{boolean isMatch = Pattern.matches("a*b", "ab");}
 Future work for improving coverage levels should also consider the potential for improvement based on such factors. 
 
 %\paragraph{Beyond Structural Coverage}
@@ -30,7 +30,6 @@ Building on the example in Section~\ref{sec:coverage}, achieving 100\% coverage 
 In the example of {\tt \textbackslash d+}, there are strings of length one to length four, though strings could be longer to test multiple iterations on the self-loop. Strings can contain only digits, only non-digits, or both digits and non-digits. Strings can start with digits or start with non-digits. %All of these options lead to different paths covered in the DFA. % and strings whose starting digits are of length one to four. 
 Defining such input space partitions may lead to intuitive test sets with high behavioral coverage. 
 %If the testing inputs are very short (only one to two characters), or if the testing inputs start only with digits, or if the inputs start only with non-digits, the $EPC$ will not achieve 100\%. 
-
 
 %The testing coverage metrics could be a measurement to validate the strictness of generated regular expressions. Many regular expression tools extract regular expressions from a set of strings. Given this string set and the extracted regular expression, the coverage metrics can tell whether this regular expression is equivalent to the strings. It is likely that the regular expression is generalized and has a larger scope than the provided set of strings.
 
