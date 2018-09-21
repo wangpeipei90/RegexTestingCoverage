@@ -32,7 +32,7 @@ Third, to motivate the structural coverage metrics, we explore whether faults ca
 
 
 
-\subsection{How Regular are Regular Expressions?}
+\subsection{How Regular Are Regular Expressions?}
 \label{regularregularexpressions}
 Regular expressions in source code can contain non-regular features, such as backreferences. An example is the regular expression \verb!([a-z]+\1)!, which matches a repeated word in a string, such as ``appleapple". Building a DFA is not possible for this since this regular expression is non-regular. For regular expressions in source code that are indeed regular, we can build DFAs and measure coverage based on a test suite. 
 Here, we are testing how many of the regular expressions in the wild are truly regular. 

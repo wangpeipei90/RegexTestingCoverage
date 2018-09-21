@@ -1,14 +1,14 @@
 \section{Discussion}
 \label{sec:discussion}
 This section summarizes future work based on our findings and discusses threats to validity.
-\subsection{Opportunities For Future Work}
+\subsection{Opportunities for Future Work}
 %We have applied graph coverage metrics to regular expressions and looked at how well existing test suites perform according to the metrics. 
 Coverage provides useful stopping criteria for testing. 
 However, high coverage does not necessarily imply test suite effectiveness in source code~\cite{coveragetestsuitecorrelation}, which may also hold true for regular expressions. 
 At the same time, as regular expressions are responsible for many software faults, it is important to explore how to make them less error-prone. Our approach in this work is through test metrics, and there are many areas of future work that follow:
 
 %\paragraph{String-generation tool:} 
-\textbf{String-generation tools: } 
+\textbf{String-generation Tools: } 
 Given the low coverage of regular expressions shown in Figure~\ref{cov:stack}, a natural next step could be to generate strings to achieve high coverage. 
 %In RQ2, Rex achieves high structural coverage. % but language limitations mean it can only handle  half the  dataset. 
 %It also ignores the failure case, $N_e$, and all edges incident to it. 
@@ -39,7 +39,7 @@ Defining such input space partitions may lead to intuitive test sets with high b
 %\subsection{100\% Coverage}
 %There are some cases in which it is infeasible to achieve 100\% coverage. With Rex, for example, all strings generated are matching strings, so the error node and all edges to the error node will never be traversed. This example, however, is a tool limitation, not a theoretical limitation. 
 %\todo{when is it infeasible to achieve 100\% EC or NC or EPC?}
-%\subsection{Opportunities For Future Work}
+%\subsection{Opportunities for Future Work}
 %\textbf{String-generation tool that leads to better coverage:} The testing coverage for edges and edge pairs are comparatively low in both Java GitHub projects and in regular expression tools. In future, we can consider building a tool that generates not only successful matching input strings but also failed matching input strings. The tool could generate strings based on incremental coverage. In other words, the set of generated strings increase the testing coverage one by one and finally achieve 100\% coverage. 
 %\paragraph{Regular expression transformation tool containing only basic features:} Most regular expression engines selectively support some additional features that are not included in standard regular language operations. These additional features are expensive to implement in tools such as RE2 and Rex. They may also have no DFA representations. If we can transform or replace these features with basic features, the practical applications of these tools can be enlarged greatly.
 %\paragraph{Regular expression testing tool specifying how well it is tested:} In this paper we have calculated coverage information for tested regular expressions, but those untested regular expressions are unknown. Through static control flow analysis of source code, we can infer all the regular expressions specified in the source code; and through dynamic instrumentation, we can intercept tested regular expressions. It will be helpful in software testing if we can report the untested regular expressions and the coverages of tested regular expressions. 
